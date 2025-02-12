@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "metro_pass")
-public class MetroPass {
+public class MetroCard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

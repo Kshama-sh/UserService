@@ -20,7 +20,7 @@ public class UserProfiles {
     private String contact;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private MetroPass metroPass;
+    private MetroCard metroPass;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<TravelHistory> travelHistory;
