@@ -1,14 +1,17 @@
 package com.webknot.UserService.Entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import java.sql.ConnectionBuilder;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name = "travel_history")
 public class TravelHistory{
 
@@ -16,11 +19,13 @@ public class TravelHistory{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String sourceStation;
-    private String destinationStation;
+    @Column(name = "source_station")
+    private String source;
+    private String destination;
     private Double fare;
-    private LocalDateTime travelDate;
+    private LocalDateTime travelTime;
 
     @ManyToOne
-    private UserProfiles user;
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserProfile user;
 }

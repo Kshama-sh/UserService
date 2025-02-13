@@ -4,6 +4,9 @@ import com.webknot.UserService.Entity.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
-public interface MetroPassRepository extends JpaRepository<MetroCard, Long> {
+public interface MetroCardRepository extends JpaRepository<MetroCard, Long> {
+    Optional<MetroCard> findByUserId(Long userId);
 }

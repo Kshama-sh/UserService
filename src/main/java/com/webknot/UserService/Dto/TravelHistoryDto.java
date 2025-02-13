@@ -1,14 +1,16 @@
 package com.webknot.UserService.Dto;
 
+import jdk.jshell.Snippet;
+import lombok.Builder;
 import lombok.Data;
-
 import java.time.LocalDateTime;
-
+@Builder
 @Data
 public class TravelHistoryDto {
     private Long id;
-    private String sourceStation;
-    private String destinationStation;
+    private String source;
+    private String destination;
     private Double fare;
-    private LocalDateTime travelDate;
+    private LocalDateTime travelTime;
+    private Long userId;
 }

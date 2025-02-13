@@ -1,13 +1,16 @@
 package com.webknot.UserService.Entity;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @Table(name = "metro_pass")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MetroCard {
 
     @Id
@@ -18,5 +21,7 @@ public class MetroCard {
     private Double balance;
 
     @OneToOne
-    private UserProfiles user;
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JsonIgnore
+    private UserProfile user;
 }
