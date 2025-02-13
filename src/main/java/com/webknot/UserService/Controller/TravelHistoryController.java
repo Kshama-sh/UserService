@@ -3,6 +3,7 @@ package com.webknot.UserService.Controller;
 import com.webknot.UserService.Dto.TravelHistoryDto;
 import com.webknot.UserService.Service.TravelHistoryService;
 import com.webknot.UserService.Service.UserProfileService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/travel-history")
 @RequiredArgsConstructor
+@Tag(name = "Travel history Controller", description = "Handles travel operations")
 public class TravelHistoryController {
 
     private final TravelHistoryService travelHistoryService;

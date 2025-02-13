@@ -3,6 +3,7 @@ package com.webknot.UserService.Controller;
 import com.webknot.UserService.Dto.UserProfilesDto;
 import com.webknot.UserService.Entity.*;
 import com.webknot.UserService.Service.UserProfileService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
+@Tag(name = "User profile Controller", description = "Handles user operations")
 public class UserProfileController {
     private final UserProfileService userProfileService;
 

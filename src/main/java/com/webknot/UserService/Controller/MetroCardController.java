@@ -7,7 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Metro Card Controller", description = "Handles Metro Card operations")
 @RestController
 @RequestMapping("/api/v1/metro-card")
 @RequiredArgsConstructor
@@ -20,7 +22,7 @@ public class MetroCardController {
     }
 
     @DeleteMapping("/cancel/{userId}")
-    public ResponseEntity<?> cancelMetroPass(@PathVariable Long userId) {
+    public ResponseEntity<String> cancelMetroPass(@PathVariable Long userId) {
         try {
             String message = metroCardService.cancelMetroPass(userId);
             return ResponseEntity.ok(message);
