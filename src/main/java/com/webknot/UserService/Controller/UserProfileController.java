@@ -30,6 +30,12 @@ public class UserProfileController {
         return userProfileService.getAllUsers();
     }
 
+    @GetMapping("/{userId}")
+    public ResponseEntity<UserProfile> getUserById(@PathVariable Long userId) {
+        UserProfile user = userProfileService.getUserById(userId);
+        return ResponseEntity.ok(user);
+    }
+
     @DeleteMapping("/delete")
     public ResponseEntity<String> deleteAllUsers() {
         userProfileService.deleteAllUsers();
